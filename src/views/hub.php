@@ -1,6 +1,7 @@
 <?php 
 session_start();
 include '../includes/header.php'; 
+include '../includes/crud.php';
 $id = $_SESSION['cliente_id'] ;
 
 if(!isset($id)) {
@@ -8,13 +9,26 @@ if(!isset($id)) {
     exit();
 }
 
+$produtos = listar_produtos();
 ?>
 
 <h1>Bem vindo, <?php echo "" .  $_SESSION['cliente_nome'] ?></h1>
 <h2>Produtos</h2>
 
 <div class="container">
-    
+<?php if (count($produtos) > 0): ?>
+    <?php foreach ($produtos as $produto): ?>
+    <a href="produto.php?id_produto=<?php echo $produto['id_produto']; ?>"  style="text-decoration: none; color: inherit;">
+        <div class="produto">
+            <img src="<?php echo htmlspecialchars($produto['imagem']); ?>" alt="imagem do produto" style="max-width: 200px; height: auto;">
+            <h4><?php echo htmlspecialchars($produto['nome']); ?></h4>
+            <h5>R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?></h5>
+        </div>
+        </a>
+    <?php endforeach ?>
+    <?php else: ?>
+        <p>Atualmente sem produtos!</p>
+<?php endif ?>
 </div>
 <a href="../functions/logout_process.php">Deslogar</a>
 
