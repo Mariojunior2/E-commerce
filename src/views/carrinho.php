@@ -18,6 +18,7 @@ $compras = buscar_compra($id_cliente);
 <div class="container">
     <?php if (count($compras) > 0) :?>
         <?php foreach ($compras as $compra) :?>
+        <a href="produto.php?id_produto=<?php echo $compra['id_produto']; ?>"  style="text-decoration: none; color: inherit;">
             <div class="card" style="margin: 10px; padding: 10px; border: 1px solid #ccc;">
                 <img src="<?php echo htmlspecialchars($compra['imagem']); ?>" alt="imagem do produto" style="max-width: 200px; height: auto;">
                 <h4><?= htmlspecialchars($compra['nome']) ?></h4>
@@ -25,6 +26,7 @@ $compras = buscar_compra($id_cliente);
                 <p>Preço unitário: R$ <?= number_format($compra['preco'], 2, ',', '.') ?></p>
                 <p>Subtotal: R$ <?= number_format($compra['quantidade'] * $compra['preco'], 2, ',', '.') ?></p>
             </div>
+        </a>
         <?php endforeach ?>
     <?php else :?>
         <p>Nenhum produto no carrinho.</p>
