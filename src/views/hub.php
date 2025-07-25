@@ -30,6 +30,17 @@ $produtos = listar_produtos();
         <p>Atualmente sem produtos!</p>
 <?php endif ?>
 </div>
+
+<?php 
+    if (isset($_GET['sucesso_compra']) && $_GET['sucesso_compra'] == 1)     {
+        echo '<p style="color: green;">Compra realizada com sucesso! Pode ver em seu carrinho!</p>';
+    }
+    if (isset($_GET['erro_compra']) && $_GET['erro_compra'] == 1) {
+        echo '<p style="color: red;">Erro ao comprar. Tente novamente.</p>';
+    }
+?>
+
+
 <a href="../functions/logout_process.php">Deslogar</a>
 
 <?php include '../includes/footer.php' ?>
