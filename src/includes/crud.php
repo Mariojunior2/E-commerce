@@ -36,19 +36,20 @@ function editar_preco($id_produto, $quantidade) {
     ]);
 }
 
-/*
 
-function buscar_compra($id_produto, $id_cliente) {
+function buscar_compra($id_cliente, ) {
     global $pdo;
-    $sql = "SELECT * FROM compra WHERE id_produto = :id_produto AND id_cliente = :id_cliente";
+    $sql = "SELECT c.*, p.nome, p.preco, p.imagem FROM compra c
+            JOIN produto p ON c.id_produto = p.id_produto
+            WHERE c.id_cliente = :id_cliente";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([
-        ':id_produto' => $id_produto,
-        ':id_cliente' => $id_cliente
-    ]);
-    return $stmt->fetch(PDO::FETCH_ASSOC);
+        ':id_cliente' => $id_cliente,
 
-    }
-*/
+    ]);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
 
 ?>

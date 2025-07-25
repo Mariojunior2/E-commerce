@@ -14,6 +14,7 @@ $produtos = listar_produtos();
 
 <h1>Bem vindo, <?php echo "" .  $_SESSION['cliente_nome'] ?></h1>
 <h2>Produtos</h2>
+<h2><a href="./carrinho.php">Carrinho</a></h2>
 
 <div class="container">
 <?php if (count($produtos) > 0): ?>
@@ -37,6 +38,9 @@ $produtos = listar_produtos();
     }
     if (isset($_GET['erro_compra']) && $_GET['erro_compra'] == 1) {
         echo '<p style="color: red;">Erro ao comprar. Tente novamente.</p>';
+    }
+    if (isset($_GET['erro_compra']) && $_GET['erro_compra'] == 2) {
+        echo '<p style="color: red;">Estoque insuficiente pelo valor pedido do produto. Espere o vendendor recarregar o estoque.</p>';
     }
 ?>
 

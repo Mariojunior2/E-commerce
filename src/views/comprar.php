@@ -13,11 +13,18 @@ if(!isset($id) or !isset($id_produto)) {
 
 $produto = buscar_produto($id_produto);
 $valor_total = $produto['preco'] * $quantidade;
+if ($quantidade > $produto['quantidade']) {
+    header("Location: ../views/hub.php?erro_compra=2");
+    exit();
+}
+
+$novo_estoque = $produto['quantidade'] - $quantidade;
+
 
 
 
 ?>
-<form action="../functions/finalizar_compra_process.php?valor=<?php echo $valor_total ?>&id_produto=<?php echo $produto['id_produto']; ?>" method="post">
+<form action="../functions/finalizar_compra_process.php?valor=<?php echo $valor_total ?>&id_produto=<?php echo $produto['id_produto']; ?>&novo_estoque=<?php echo $novo_estoque; ?>&quantia=<?php echo $quantidade; ?>" method="post">
 <h3><?php echo htmlspecialchars($produto['nome']); ?></h3>
 <img src="<?php echo htmlspecialchars($produto['imagem']); ?>" alt="imagem do produto" style="max-width: 200px; height: auto;">
 <h5>R$ <?php echo number_format($valor_total, 2, ',', '.'); ?></h5> 
