@@ -1,0 +1,108 @@
+/* Reset básico para remover margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Corpo da página centralizado e com fonte agradável */
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f6f6f6;
+    color: #222;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: flex-start; /* Começa do topo */
+  }
+  
+  /* Container principal para alinhar conteúdo */
+  .container {
+    width: 100%;
+    max-width: 800px;
+    margin: 32px 0;
+    background: #fff;
+    padding: 24px 32px;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Títulos alinhados ao centro */
+  h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    margin-bottom: 18px;
+    margin-top: 10px;
+  }
+  
+  /* Parágrafos e textos */
+  p {
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  
+  /* Botões simples e alinhados */
+  button, .btn {
+    background: #005baf;
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
+    margin: 8px 0;
+    text-align: center;
+  }
+  
+  button:hover, .btn:hover {
+    background: #003a6d;
+  }
+  
+  /* Inputs e formulários alinhados */
+  input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Links */
+  a {
+    color: #005baf;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Listas centralizadas */
+  ul, ol {
+    width: 100%;
+    margin: 16px 0 16px 0;
+    padding-left: 24px;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 600px) {
+    .container {
+      padding: 16px 4px;
+      max-width: 98%;
+    }
+    body {
+      padding: 0 2px;
+    }
+  }
