@@ -16,6 +16,7 @@ if($_GET) {
     if($cliente && password_verify($senha, $cliente['senha'])) {
         $_SESSION['cliente_id'] = $cliente['id_cliente'];
         $_SESSION['cliente_nome'] = $cliente['nome'];
+        $_SESSION['cliente_tipo'] = $cliente['tipo_usuario'];
 
         header('Location: ../views/hub.php?sucesso=1');
         exit();

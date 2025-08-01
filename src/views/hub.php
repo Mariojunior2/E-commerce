@@ -2,8 +2,9 @@
 session_start();
 include '../includes/header.php'; 
 include '../includes/crud.php';
-$id = $_SESSION['cliente_id'] ;
 
+$id = $_SESSION['cliente_id'] ;
+$tipo = $_SESSION['cliente_tipo'];
 if(!isset($id)) {
     header('Location: index.php');
     exit();
@@ -12,7 +13,15 @@ if(!isset($id)) {
 $produtos = listar_produtos();
 ?>
 
-<h1>Bem vindo, <?php echo "" .  $_SESSION['cliente_nome'] ?></h1>
+<h1>Bem vindo Cliente, <?php echo "" .  $_SESSION['cliente_nome'] ?></h1>
+<?php 
+if($tipo == 'vendedor') {
+    echo '<a href="./vendendorhub.php">Ir para área de vendendor</a>';
+} 
+elseif($tipo == 'admin') {
+    echo '<a href="./adminhub.php">Ir para área de admin</a>';
+}
+?>
 <h2>Produtos</h2>
 <h2><a href="./carrinho.php">Carrinho</a></h2>
 
