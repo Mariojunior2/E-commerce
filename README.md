@@ -14,14 +14,6 @@ O projeto **E-commerce** é uma plataforma web desenvolvida com o objetivo de si
 - **Histórico de Pedidos:** Usuários autenticados podem visualizar o histórico de compras e detalhes de cada pedido.
 - **Integração com Métodos de Pagamento:** O sistema está preparado para ser integrado com gateways de pagamento (a ser implementado ou em desenvolvimento).
 
-## Tecnologias Utilizadas
-
-- **Frontend:** Frameworks modernos de desenvolvimento web (ex: React, Next.js, ou outra stack escolhida).
-- **Backend:** API RESTful (Node.js/Express, ou similar).
-- **Banco de Dados:** Solução relacional (MySQL/PostgreSQL) ou NoSQL (MongoDB) para armazenamento de produtos, usuários e pedidos.
-- **Autenticação:** JWT (JSON Web Token) ou outros padrões seguros para autenticação e autorização.
-- **Estilização:** CSS moderno (Tailwind, Styled Components, Bootstrap, etc).
-- **Gerenciamento de Estado:** Context API, Redux, ou outra solução conforme a stack escolhida.
 
 ## Como Funciona
 
