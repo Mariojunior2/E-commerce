@@ -43,17 +43,7 @@ O projeto **E-commerce** é uma plataforma web desenvolvida com o objetivo de si
    ```
    git clone https://github.com/Mariojunior2/E-commerce.git
    ```
-2. Instale as dependências:
-   ```
-   cd E-commerce
-   npm install
-   ```
-3. Configure as variáveis de ambiente, se necessário (ex: `.env`).
-4. Inicie o servidor de desenvolvimento:
-   ```
-   npm run dev
-   ```
-5. Acesse no navegador: `http://localhost:3000`
+
 
 ## Roadmap e Futuras Implementações
 
